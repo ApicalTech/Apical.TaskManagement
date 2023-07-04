@@ -31,8 +31,7 @@ public class ExampleControllerTests
             .Setup(x => x.Send(It.IsAny<GetExampleByIdQuery>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(new QueryResult<Example>());
         var controller = new ExampleController(
-            _loggerMock.Object,
-            _mediatorMock.Object
+            _loggerMock.Object
         );
 
         // ACT
@@ -51,8 +50,7 @@ public class ExampleControllerTests
             .Setup(x => x.Send(It.IsAny<GetExampleByIdQuery>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(new QueryResult<Example>() { Type = QueryResultTypeEnum.NotFound });
         var controller = new ExampleController(
-            _loggerMock.Object,
-            _mediatorMock.Object
+            _loggerMock.Object
         );
 
         // ACT
@@ -70,8 +68,7 @@ public class ExampleControllerTests
             .Setup(x => x.Send(It.IsAny<GetExampleByIdQuery>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(new QueryResult<Example>() { Type = QueryResultTypeEnum.InvalidInput });
         var controller = new ExampleController(
-            _loggerMock.Object,
-            _mediatorMock.Object
+            _loggerMock.Object
         );
 
         // ACT
@@ -89,8 +86,7 @@ public class ExampleControllerTests
             .Setup(x => x.Send(It.IsAny<UpdateExampleNameCommand>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(new CommandResult<bool>());
         var controller = new ExampleController(
-            _loggerMock.Object,
-            _mediatorMock.Object
+            _loggerMock.Object
         );
 
         // ACT
@@ -109,8 +105,7 @@ public class ExampleControllerTests
             .Setup(x => x.Send(It.IsAny<UpdateExampleNameCommand>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(new CommandResult<bool>() { Type = CommandResultTypeEnum.NotFound });
         var controller = new ExampleController(
-            _loggerMock.Object,
-            _mediatorMock.Object
+            _loggerMock.Object
         );
 
         // ACT
@@ -128,8 +123,7 @@ public class ExampleControllerTests
             .Setup(x => x.Send(It.IsAny<UpdateExampleNameCommand>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(new CommandResult<bool>() { Type = CommandResultTypeEnum.InvalidInput });
         var controller = new ExampleController(
-            _loggerMock.Object,
-            _mediatorMock.Object
+            _loggerMock.Object
         );
 
         // ACT
