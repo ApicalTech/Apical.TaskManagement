@@ -87,7 +87,7 @@ jobs:
         echo '  make release'
         exit 1
     - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+      uses: github/codeql-action/autobuild
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
